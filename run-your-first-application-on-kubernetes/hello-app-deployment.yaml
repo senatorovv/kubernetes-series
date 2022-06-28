@@ -3,21 +3,21 @@ kind: Deployment
 metadata:
   name: hello-app-deployment
   labels:
-    app: hello-app
+    app: hello-app1
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hello-app
+      app: hello-app1
   template:
     metadata:
       labels:
-        app: hello-app
+        app: hello-app1
     spec:
       nodeSelector:
         type: backend
       containers:
-        - name: hello-app
+        - name: hello-app1
           image: hello-app:v.01
           ports:
             - containerPort: 8080
